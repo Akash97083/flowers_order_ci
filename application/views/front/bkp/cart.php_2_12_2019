@@ -1,0 +1,743 @@
+<?php $this->load->view('front/header-top.php'); ?>
+
+<title>Saesha Flowers | Global Florist Delivering Fresh Flowers</title>
+<meta name=""/>
+
+<!--<link href="<?php //echo base_url();?>webadmin/front/i1.fnp.sg/v100/assets/min/product.css" rel="stylesheet">-->
+
+<style>
+	.carttab {
+		float: left;
+		width: 100%;
+		padding: 0px;
+		margin: 15px 0 0 0;
+		border: none;
+	}
+	.carttab .nav-tabs {
+		border: none;
+		padding: 0 3.7777%;
+	}
+	.carttab .nav-tabs > li {
+		margin: 0;
+	}
+	.carttab .nav-tabs > li > a {
+		border: none !important;
+		background-color: none;
+		padding: 10px 25px 0px 0px;
+		font-size: 24px;
+		margin: 0;
+		cursor:default;
+		color: #666563;
+		border-radius: 0;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		line-height: 38px;
+	}
+	.carttab .nav-tabs > li > a span {
+		width: 38px;
+		height: 38px;
+		margin-right: 10px;
+		line-height: 38px;
+		text-align: center;
+		float: left;
+		font-size: 24px;
+		background: #666563;
+		border-radius: 50%;
+		color: #fff;
+	}
+	.carttab .nav-tabs > li.active > a {
+		color:#ed8323;
+	}
+	.carttab .nav-tabs > li > a:hover,
+	.carttab .nav-tabs > li > a:focus {
+		background:transparent !important;
+	}
+	.carttab .nav-tabs > li.active > a span {
+		width: 38px;
+		height: 38px;
+		line-height: 38px;
+		text-align: center;
+		float: left;
+		font-size: 24px;
+		background: #ed8323;
+		border-radius: 50%;
+		color: #fff;
+	}
+	.cart-table {}
+	.cart-table thead {}
+	.cart-table thead tr {}
+	.cart-table thead tr th {
+		font-weight: bold;
+	}
+	.carttotal strong {
+		font-size: 20px;
+	}
+	.mrt-18 {
+		margin-top: 5px;
+		margin-bottom: 13px;
+	}
+	.carttotal .totalamout {
+		font-size: 16px;
+		line-height: 25px;
+		width: 160px;
+	}
+	.crt-prc {
+		font-weight: normal;
+		font-size: 16px;
+	}
+	.carttotal .totalamout {
+		font-size: 16px;
+		line-height: 25px;
+		width: 160px;
+	}
+	.cpn_code {
+		width: 30%;
+		padding: 0 10px;
+		line-height: 30px !important;
+		float: left;
+		border: 1px solid #c0c0c0;
+		border-radius: 5px;
+	}
+	.apply {
+		background: #c6c4c4 !important;
+	}
+	.flap_btn {
+		float: left;
+		margin: 0px 0 0 20px;
+		left: 0px;
+		top: 0px;
+	}
+	.cbttn {
+		display: inline-block;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
+		color: #ffffff;
+		text-align: center;
+		margin-top: 15px;
+		padding: 5px 29px;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		background:	#ed8323;
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#837eba', endColorstr='#635da8', GradientType=0);
+	}
+	.pmt_box {
+ font-size: 18px;
+ margin: 0 0 20px;
+ padding: 20px 30px;
+ color: #31372d;
+ font-weight: 400;
+ background-color: #fffbf1;
+ border: 1px solid #ed8323;
+}
+.pmt_inpt {
+ width: 100%;
+ padding: 0 10px;
+ line-height: 30px !important;
+ font-size: 14px;
+ float: left;
+ border: 1px solid #a9a9a9;
+ border-radius: 5px;
+ color: #888;
+}
+.pmtp_btn {
+ float: left;
+ margin: 15px 0 0 20px;
+ left: 50%;
+ top: 0%;
+ margin-left: -100px;
+}
+	.cpn_code {
+    width: 30%;
+    padding: 0 10px;
+    line-height: 30px !important;
+    float: left;
+    border: 1px solid 
+    #c0c0c0;
+    border-radius: 5px;
+}
+	.flap_btn {
+    float: left;
+    margin: 0px 0 0 20px;
+    left: 0px;
+    top: 0px;
+}
+	
+</style>
+
+<?php $this->load->view('front/header-bottom.php'); ?>	
+
+<main itemscope itemtype="http://schema.org/Service">
+<meta itemprop="serviceType" content="Gifting"/>
+
+<div id="content-messages" class="content-messages errorMessage" style=";display:none;">
+	<ul></ul>
+</div>	
+
+<div itemscope itemtype="https://schema.org/BreadcrumbList" id="product-breadcrumb">
+	<nav data-ga-category="MainContent" id="breadcrumbs" class="productnav product-wrapper" itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+		<div class="breadcrumb-wrapper">
+			<a itemprop="item name" class="navmenu" href="<?php echo base_url();?>">Home<meta itemprop="position" content="1"/></a>
+			<i class="material-icons breadcrumb-icons">keyboard_arrow_right</i> 
+			<span class="navmenu">Shopping Cart</span>
+		</div>
+	</nav>
+</div>
+
+<div class="row@@@@" itemscope itemtype="" data-ga-category="MainContent">
+	
+	<div class="carttab col-xs-12">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#!" data-toggle="tab"><span>1</span>Shopping Cart</a></li>
+            <li><a href="#!" data-toggle="tab"><span>2</span>Delivery &amp; Payment</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane carttab active" id="byoccasion">				
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12 carttable">
+						<div class="table-responsive">
+							<table class="table table-bordered cart-table" >
+								<thead>
+									<tr style="background:#FEF3DC;">
+										<th>Product</th>
+										<th>Product Details/Options</th>
+										<th>Quantity</th>
+										<th>Price</th>
+										<th>Total</th>
+										<th>Remove</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td width="15%" valign="middle" align="center" style="vertical-align: middle;">
+											<img src="https://www.probunga.com/saiflora130100/uploads/product-pics/1505197156_432.jpg" class="dg_img" alt="product" style="border:1px solid #efefef;width:100px;">
+										</td>
+										<td width="35%" style="vertical-align: middle;">
+											<p>Product ID : #32532<br>
+												<b></b>
+												<br>
+												<b>Addon Product :- </b>
+											</p>
+											<table width="100%">
+												<tbody>
+													<tr>
+														<td width="15%" valign="middle" align="center">
+															<img src="https://www.probunga.com/saiflora130100/uploads/product-pics/1519994671_t4.jpg" class="img" style="border:1px solid #efefef; width:80%; padding-bottom:4px;" vspace="0" hspace="4" border="0">
+														</td>
+														<td width="48%">+ 2 Ft Teddy Bear (60 cm).  X  1</td>
+														<td width="70%" align="right">
+															<span class="indian_webRupee">Rp.</span> 552000<span class="indian_webRupee"> / $.</span> 38.64
+														</td>
+														<td width="20" align="center">
+															<input type="button" name="delete_prod_addon" value="x" style="font-weight:bold;border:0px solid #000000;color:#ff0000;background:transparent;padding:0px;margin:0 5px 5px 5px;font-size: 19px;" onclick="updatedelprod_addon(32503,'372f8774202fcaef20fb3917607999a8');" title="Remove">
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<p></p>
+										</td>
+										<td class="cart_tr" style="text-align: center; vertical-align: middle;">
+											<input type="text" id="372f8774202fcaef20fb3917607999a8" class="quantitycart cart_input td_no" value="1" onkeyup="IsChkNumc(this);" onchange="IsChkNumc(this);" min="1" maxlength="2" style="width:40px;border:1px solid #ddd;padding: 3px;text-align: center;">
+											<br>
+											<a href="javascript:void(0)" class="updateCartbtn" id="updateCart1" data-uri="1" style="color: #ed832f; text-decoration: none; font-size:12px;" onclick="update_cart_save('372f8774202fcaef20fb3917607999a8')">Update</a>
+										</td>
+										<td class="cart_tr" style="text-align: center; vertical-align: middle;">
+											<span class="indian_webRupee">Rp</span> 380000<span class="indian_webRupee"> / $</span> 26.60
+										</td>
+										<td class="cart_tr" style="text-align: center; vertical-align: middle;">
+											<span class="indian_webRupee">Rp</span> 932000<span class="indian_webRupee"> / $</span> 65.24
+										</td>
+										<td class="cart_tr" style="text-align: center; vertical-align: middle;"> 
+											<div class="dlt_bck" onclick="remove_cart_item('372f8774202fcaef20fb3917607999a8')" title="Remove" style="cursor: pointer;">
+												<i class="fa fa-trash-o"></i>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>					
+						</div>
+					</div>
+				</div>
+             
+				
+				
+				
+				<div class="row">
+					<div class="col-md-7 col-sm-12 col-xs-12 carttotal">
+                 <strong>CART TOTAL :</strong><br>
+					<div class="mrt-18">
+					<label class="totalamout">Total  : </label>
+					<label class="crt-prc">
+						Rp 932000												/
+						$ 65.24											</label><br>
+                	
+					<span style="font-size:13px; color:#666; display:none">
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: per</p>
+<p>Filename: templateprobunga/my-cart.php</p>
+<p>Line Number: 80</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/views/templateprobunga/my-cart.php<br>
+			Line: 80<br>
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/controllers/Cart.php<br>
+			Line: 392<br>
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/index.php<br>
+			Line: 316<br>
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: per</p>
+<p>Filename: templateprobunga/my-cart.php</p>
+<p>Line Number: 80</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/views/templateprobunga/my-cart.php<br>
+			Line: 80<br>
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/controllers/Cart.php<br>
+			Line: 392<br>
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/index.php<br>
+			Line: 316<br>
+			Function: require_once			</p>
+
+		
+	
+
+</div>% Discount :</span> 
+						<span style="color:#666; font-size:13px;  display:none">
+							
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: coupandis</p>
+<p>Filename: templateprobunga/my-cart.php</p>
+<p>Line Number: 82</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/views/templateprobunga/my-cart.php<br>
+			Line: 82<br>
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/controllers/Cart.php<br>
+			Line: 392<br>
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/index.php<br>
+			Line: 316<br>
+			Function: require_once			</p>
+
+		
+	
+
+</div>Rp 0
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: coupandis</p>
+<p>Filename: templateprobunga/my-cart.php</p>
+<p>Line Number: 83</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/views/templateprobunga/my-cart.php<br>
+			Line: 83<br>
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/controllers/Cart.php<br>
+			Line: 392<br>
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/index.php<br>
+			Line: 316<br>
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: promoid</p>
+<p>Filename: templateprobunga/my-cart.php</p>
+<p>Line Number: 83</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/views/templateprobunga/my-cart.php<br>
+			Line: 83<br>
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/controllers/Cart.php<br>
+			Line: 392<br>
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/index.php<br>
+			Line: 316<br>
+			Function: require_once			</p>
+
+		
+	
+
+</div> 
+						
+
+																		
+						
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: coupandis</p>
+<p>Filename: templateprobunga/my-cart.php</p>
+<p>Line Number: 89</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/views/templateprobunga/my-cart.php<br>
+			Line: 89<br>
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/controllers/Cart.php<br>
+			Line: 392<br>
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/index.php<br>
+			Line: 316<br>
+			Function: require_once			</p>
+
+		
+	
+
+</div>$ 0.00
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: coupandis</p>
+<p>Filename: templateprobunga/my-cart.php</p>
+<p>Line Number: 90</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/views/templateprobunga/my-cart.php<br>
+			Line: 90<br>
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/controllers/Cart.php<br>
+			Line: 392<br>
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/index.php<br>
+			Line: 316<br>
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: promoid</p>
+<p>Filename: templateprobunga/my-cart.php</p>
+<p>Line Number: 90</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/views/templateprobunga/my-cart.php<br>
+			Line: 90<br>
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/application/controllers/Cart.php<br>
+			Line: 392<br>
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/vhosts/globalflora.com/httpdocsnew/probunga/index.php<br>
+			Line: 316<br>
+			Function: require_once			</p>
+
+		
+	
+
+</div> 
+												</span>
+					
+											
+					
+					<label class="totalamout"> Delivery Charges : </label>
+					<label class="crt-prc">
+						Rp 200000												/
+						$ 14.00											</label><br>
+                  
+					 <label class="totalamout">
+						 Grand Total : 
+					</label>
+					<label class="crt-prc">
+						 Rp 1132000												/
+						$ 79.24											</label><br>
+                  
+					</div>
+					<form class="row mr_40" id="coupon" action="https://www.probunga.com/Cart/coupon" method="POST">
+					<div class="col-md-12">
+						<!--<input type="text" class="cpn_code" placeholder="Code">
+						<button class="cbttn frbtn flap_btn" type="submit" data-toggle="modal" data-target="#buy_flower">Apply Coupon</button>
+						<button class="cbttn frbtn flap_btn" type="submit" data-toggle="modal" data-target="#buy_flower">Buy More</button>-->
+						
+						
+						<input placeholder="Enter Coupon Here" name="coupon" class="cpn_code cou coup" value="" type="text" autocomplete="off">
+					
+					
+					<a class="apply cbttn frbtn flap_btn" id="applycoupan" href="#">Apply</a>
+					
+					<a class=" cbttn frbtn flap_btn" href="https://www.probunga.com/all-flowers-indonesia">Buy More </a>
+					
+					<span id="checkPromocode" style="min-height:20px;height:20px;width:100%;float:left;text-align:left;">&nbsp;	</span>
+					
+					<div class="col-md-6" style="padding-left:0px;">
+						<div class="alert alert-danger alert-dismissable" style="display:none">
+						  <a style="padding-right:10px;" href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+						  <strong>Error!</strong> Please enter valid coupon code
+						</div>
+						<div class="alert alert-danger alert-dismissable" style="display:none">
+						  <a style="padding-right:10px;" href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+						  <strong>Error!</strong> 						</div>
+						</div>
+						
+						
+                  	</div>
+					</form>
+					
+                </div>
+					
+					<div class="col-md-5 col-sm-12 col-xs-12 pmt_box">
+					<form id="frm_checkout" action="https://www.probunga.com/Checkout/checkout_order" method="post">
+										
+					<input type="email" name="email" class="pmt_inpt" placeholder="Enter Email">
+										<button class="cbttn frbtn pmtp_btn" type="submit" data-toggle="modal" data-target="#buy_flower">Proceed To Payment</button>
+					<!--<span class="or_pmt">or</span>
+					<button class="face_login" type="submit" data-toggle="modal" data-target="#buy_flower"><img src="images/face_btn.jpg" alt=""/></button>
+					<button class="check_login" type="submit" data-toggle="modal" data-target="#buy_flower">Login To Checkout</button>--></form>
+				</div>
+              </div>
+             
+				
+				
+				
+				
+				
+				
+            </div>
+            
+            <!--Payment-->
+            
+          </div>
+      </div>
+	
+	
+	
+	
+	<div class="clearfix"></div>	
+    
+<?php $this->load->view('front/footer.php'); ?>

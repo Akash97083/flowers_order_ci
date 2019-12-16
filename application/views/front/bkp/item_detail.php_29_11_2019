@@ -1,0 +1,467 @@
+<?php $this->load->view('front/header-top.php'); ?>
+
+<title>Saesha Flowers | Global Florist Delivering Fresh Flowers</title>
+<meta name=""/>
+
+<!--<link href="<?php //echo base_url();?>webadmin/front/i1.fnp.sg/v100/assets/min/product.css" rel="stylesheet">-->
+
+<style>
+	.product-detail-div {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	.product-option h4 span {
+		color: 	#666;
+		font-family: 'Open Sans',sans-serif;
+		font-weight: bold;
+		border-bottom: 1px dotted #666666;
+		margin-bottom: 10px;
+	}
+	.product-detail-div #tabs {
+		padding: 10px;
+	}
+	.product-detail-div #tabs .scroll-pane .tab {
+		background-color:#fcfcfc;
+		padding: 15px;
+		border: 1px solid #f1f1f1;
+	}
+	.product-detail-div #tabs .scroll-pane .tab .tab-content {
+		padding: 0;
+	}
+	
+	.stand_tit {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 18px;
+		margin: 0 0 15px;
+		padding: 6px 8px;
+		color: #31372d;
+		font-weight: 400;
+		background-color: #fffbf1;
+		border: 1px solid #fef3dc;
+	}
+	.stand_tit .optbox {
+		display: inline-block;
+		margin: 5px 0px;
+	}
+	.stand_tit .optbox input[type="radio"] {
+		margin: 0 10px 0 0;
+	}
+	.stand_tit .optbox label {
+		margin: 0;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 22px;
+	}
+	.stand_tit .optbox span {
+		display: block;
+		color: #666;
+		font-size: 15px;
+		font-weight: 600;
+		margin-top: 5px;
+	}
+	.stand_tit .optbox p {
+	    font-size: 13px;
+	}
+	.upgradeopt {
+		margin-top: 20px !important;
+	}
+	.upgradeopt h4 span {
+		color:#666;
+		font-family: 'Open Sans',sans-serif;
+		font-weight: bold;
+		border-bottom: 1px dotted #666666;
+	}
+	.upgradeopt .upinner {
+		background-color: #fffbf1;
+		border: 1px solid #fef3dc;
+		padding: 6px 24px;
+		margin: 10px 0;
+	}
+	.upgradeopt .upinner input {
+		display: inline-block;
+	}
+	.upgradeopt .upinner input[type="checkbox"] {
+		margin-top: 3px !important;
+		float: left;
+	}
+	.upgradeopt .upinner label {
+		display: inline-block;
+		font-size: 16px;
+		font-weight: normal;
+		margin: 0 10px 0 5px;
+	}
+	.upgradeopt .upinner .textline {
+		display: inline-block;
+		font-family: "Open Sans", sans-serif;
+		font-size: 16px;
+		font-weight: normal;
+	}
+	.upgradeopt .upinner .textline span {
+		color: #666;
+		font-weight:bold;
+	}
+	label.delv_tit {
+		width: 100%;
+		float: left;
+		font-size: 13px;
+		font-weight: normal;
+		margin: 3px 20px 10px 0;
+		color: #363731;
+		font-size: 18px;
+	}
+	label.delv_tit span {
+		border-bottom: 1px dotted #666666;
+		color:#666;
+		padding-bottom: 3px;
+		font-family: 'Open Sans',sans-serif;
+	}
+	select.delv_slct {
+		cursor: pointer;
+		font-size: 14px;
+		color: #4b4b4a;
+		background-image: url(<?php echo base_url();?>webadmin/front/images/droparrow2.png);
+		background-repeat: no-repeat;
+		background-position: 95% 50%;
+		width: 100%;
+		padding: 7px 7px;
+		appearance: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		margin-bottom: 10px;
+	}
+	select.delv_slct option {
+		color: #636363;
+	}
+	.delevery-option {
+		background-color:#fffbf1;
+		border: 1px solid #fef3dc;
+		margin-top: 15px !important;
+		padding: 15px;
+	}
+	.btn-cont1 {
+		text-transform: uppercase;
+		background: #ed8323;
+		color: #fff;
+		padding: 9px 24px;
+		font-size: 18px;
+		border-radius: 3px;
+		float: right;
+		margin-top: 29px;
+	}
+	.tabs-menu a {
+		background-color: #fef3dc;
+		color: #000;
+	}
+	.tabs-menu a:hover, 
+	.ui-state-active a, 
+	.ui-state-active a:link, 
+	.ui-state-active a:visited {
+		color:#fff;
+		font-family: "Roboto";
+		font-weight: 400;
+		background-color:#ed8323;
+	}
+	
+	
+	
+	.slick-prev, .slick-next {
+		display: block !important;
+	}
+	.productnav {
+		margin: 30px 20px;
+	}
+	#breadcrumbs span {
+		/*color: #666;
+		font-weight:400;*/
+	}
+	#breadcrumbs a:hover {
+		color: #31afac;
+	}
+	#breadcrumbs * {
+		text-decoration: none;
+		color: #000;
+		font-size: 14px;
+		font-weight: 300;
+		letter-spacing: 0.15px;
+	}
+	#breadcrumbs span {
+		color: #31afac;
+		font-weight: 300;
+	}
+	.breadcrumb-icons {
+		font-size: 20px !important;
+		vertical-align: middle;
+	}
+	.prodimgslider #product {
+		/*width: 364px;
+		height: 364px;*/
+	}
+	.column,
+	.columns {
+		/*position: relative;
+		padding-left: 0.9375rem;
+		padding-right: 0.9375rem;
+		float: left;*/ 
+	}
+
+	.large-1 {
+		width: 8.33333%; 
+	}
+
+	.large-2 {
+		width: 16.66667%; 
+	}
+
+	.large-3 {
+		width: 25%; 
+	}
+
+	.large-4 {
+		width: 33.33333%; 
+	}
+
+	.large-5 {
+		width: 41.66667%; 
+	}
+
+	.large-6 {
+		width: 50%; 
+	}
+
+	.large-7 {
+		width: 58.33333%; 
+	}
+
+	.large-8 {
+		width: 66.66667%; 
+	}
+
+	.large-9 {
+		width: 75%; 
+	}
+
+	.large-10 {
+		width: 83.33333%; 
+	}
+
+	.large-11 {
+		width: 91.66667%; 
+	}
+
+	.large-12 {
+		width: 100%; 
+	}
+
+	.large-offset-0 {
+		margin-left: 0 !important; 
+	}
+
+	.large-offset-1 {
+		margin-left: 8.33333% !important; 
+	}
+
+	.large-offset-2 {
+		margin-left: 16.66667% !important; 
+	}
+
+	.large-offset-3 {
+		margin-left: 25% !important; 
+	}
+
+	.large-offset-4 {
+		margin-left: 33.33333% !important; 
+	}
+
+	.large-offset-5 {
+		margin-left: 41.66667% !important; 
+	}
+
+	.large-offset-6 {
+		margin-left: 50% !important; 
+	}
+
+	.large-offset-7 {
+		margin-left: 58.33333% !important; 
+	}
+
+	.large-offset-8 {
+		margin-left: 66.66667% !important; 
+	}
+
+	.large-offset-9 {
+		margin-left: 75% !important; 
+	}
+
+	.large-offset-10 {
+		margin-left: 83.33333% !important; 
+	}
+
+	.large-offset-11 {
+		margin-left: 91.66667% !important; 
+	}
+</style>
+
+<?php $this->load->view('front/header-bottom.php'); ?>	
+
+<main itemscope itemtype="http://schema.org/Service">
+<meta itemprop="serviceType" content="Gifting"/>
+
+<?php //print_r($item_deiail);?>
+
+<div id="content-messages" class="content-messages errorMessage" style=";display:none;">
+	<ul></ul>
+</div>
+	
+<input type="hidden" id="isCustomizedCategory" value="false">
+<div itemscope itemtype="https://schema.org/BreadcrumbList" id="product-breadcrumb">
+	<nav data-ga-category="MainContent" id="breadcrumbs" class="productnav product-wrapper" itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem">
+		<div class="breadcrumb-wrapper">
+			<a itemprop="item name" class="navmenu" href="../index.html">Home<meta itemprop="position" content="1"/></a>
+			<i class="material-icons breadcrumb-icons">keyboard_arrow_right</i> 
+			<span class="navmenu">Treasured Roses</span> 
+			<meta itemprop="position" content="2" />
+		</div>
+	</nav>
+</div>
+<!-- <script>
+    var defaultVariantKey = null;
+    var defaultSubVariantKey = null;
+    var features = null;
+    var eventDays = '07-02-2017,13-02-2017,14-02-2017,15-02-2017';
+    var eventDates;
+	if(eventDays){
+	     eventDates = eventDays.split(',');
+	}
+</script> -->
+<input type="hidden" name="product_id" id="productId" value="EXP377" />
+<div class="row" itemscope itemtype="" data-ga-category="MainContent">
+	<div id="productimage" class="medium-4 large-4 columns medium-xx prodimgslider">
+		<div class="row">
+			<div class="medium-12 large-12 columns">
+				<div id="product" class="product-selected">
+					<div class="slideable">
+						<img id="detailImage1" class="productimg mainimg" itemprop="image" src="<?php echo base_url();?>webadmin/front/i1.fnp.sg/images/pr/l/treasured-roses_1.jpg"  name="mainImage" vspace="5" hspace="5" class="cssImgXLarge" alt="Flower" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="product-option medium-8 large-8 columns medium-xx">
+		<h4><span>Choose Product Option</span></h4>
+		<div class="row stand_tit" style="margin: 0;">
+			<input type="hidden" name="pid" value="32532">
+        	<div class="optbox col-md-6">
+        		<h5>
+        			<input type="radio" name="chkdouble" value="Standard-380000.00" onclick="double(this)" checked=""><label for="stand">As Shown</label>
+        		</h5>
+        		<span>Rp 380000	/ $ 26.60</span>
+        		<p>Bunch of 12 Red Roses Net Packing</p>
+        	</div>
+        	<div class="optbox col-md-6">
+        		<h5>
+        			<input class="pr-rdo" type="radio" name="chkdouble" id="chkdouble" value="Double-665000.00" onclick="double(this)"><label for="deluxe">Double The Quantity</label>
+        		</h5>
+        		<span>Rp 665000	/ $ 46.55</span>
+        		<p>Bunch of 24 Red Roses with Net Packing</p>
+        	</div>
+        </div>
+		<div class="row upgradeopt" style="margin: 0;">
+			<h4><span>Upgrade Option</span></h4>
+			<div class="upinner">
+				<input type="hidden" name="pid" value="32532">
+				<input type="checkbox" name="checkvase" id="vase" onclick="addvase()"><label>Add Glass Vase</label>
+				<div class="textline"><span>Rp 120000 / $ 8.4</span> Extra</div>
+			</div>
+		</div>
+		<div class="row delevery-option" style="margin: 0;">
+			<div class="col-md-6">
+				<div class="row">
+					<label class="delv_tit">
+						<span style="border: 0px; font-size: 16px;">Step 1.</span>
+						<span>Delivery City</span>
+					</label>
+					<select class="control-form delv_slct" name="city" id="city">
+						<option value="">Choose City</option>					
+						<option>City 1</option>
+						<option>City 2</option>
+						<option>City 3</option>
+						<option>City 4</option>
+					</select>
+					<label class="delv_tit">
+						<span style="border: 0px; font-size: 16px;">Step 2.</span>
+						<span>Delivery Date</span>
+					</label>
+					<input type="text" class="form-control mt-23 ste1" id="date" name="dates" placeholder="click to choose">
+					<input type="hidden" class="form-control mt-23 ste1" id="datepic1314" name="" value="13 or 14-Feb-2019 Thu" readonly="">
+					<p id="dateloader" class="text-danger ste1" style="display:none">Wait date is loading...</p>
+					<p id="date1314" class="ste1" style="display:none; color:#888888;font-size:12px;">Due to Valentine's day rush, all Valentine's day orders will be delivered on 13th or 14th. No preferred time of delivery is possible during Valentines day.</p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<label class="delv_tit">
+						<span style="border: 0px;font-size: 16px;">Step 3.</span>
+						<span>Delivery Time</span>
+					</label>
+					<select class="control-form delv_slct" id="deltime" name="deltime">
+						<option value="">Choose Time</option>
+						<option value="">Time 1</option>
+						<option value="">Time 2</option>
+						<option value="">Time 3</option>
+						<option value="">Time 4</option>
+					</select>   
+					<p id="timeloader" class="text-danger" style="display:none">Checking for delivery time...</p>
+					<p id="midnightchkr" class="text-danger" style="display:none; font-size:11px;">
+						<strong>If the occasion is on 11th Dec, then select 10th Dec, as the date of Midnight delivery.</strong>
+					</p>
+					<div class="txt-ct">
+						<a class="continuepopup btn-cont1" href="#" data-toggle="modal" data-target="#myModal">continue</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="product-detail-div medium-12 large-12 columns medium-xx">
+		<div id="tabs">
+			<ul class="tabs-menu row" data-ga-category='MainContent'>
+				<li class="medium-4@@ columns@@ tbli"><a href="#tab-1"><span class="linecont">Description</span></a></li>
+				<li class="medium-4@@ columns@@ tbli"><a href="#tab-2"><span class="linecont">Shipping Information</span></a></li>
+				<li class="medium-4@@ columns@@ tbli"><a href="#tab-3"><span class="linecont">FAQ</span></a></li>
+			</ul>
+			<div class="scroll-pane">
+				<ul>
+					<li>
+						<div class="tab">
+							<div id="tab-1" class="tab-content" itemprop="description">
+								<h4>Product Code: #32532</h4>
+								<p>This classic hand-tied bouquet of 12 fresh long-stemmed red roses wrapped in lush greenery makes a simple and elegant statement, and is a must for the rose lover. Why not send these quality blooms to a deserving someone todayBunch of 12 Red Roses with Gypsophelia & Net Packing</p>
+							</div>
+							<div class="tab-content" id="tab-2">
+								<h4>Flower Substitution Policy</h4>
+								<p>If your arrangement calls for a bloom we find to be below standard at the market on that given day, we will substitute it with one of the same character, quality, and color so that your arrangement is made of only the finest and freshest flowers.</p>
+								<h4>Accessory Substitution Policy</h4>
+								<p>Vases, Baskets, etc. may vary. The exact accessory shown on the product image is not guaranteed and depends upon availability. The gift will not change but the accessory may vary in color, shape, etc. If a substitution is required one of equal value &amp; style will be substituted in its place.</p>
+							</div>
+							<div id="tab-3" class="tab-content">
+								<h3 style="margin-bottom: 20px;">Frequently Asked Questions</h3>
+								<h5>What is the charge for same day delivery?</h5>
+								<p>Delivery Charge for any city in Indonesia depends according to the city. You will be able to review the delivery charge on the order preview page before completing your order.</p>
+								<h5>What is the charge for same day delivery?</h5>
+								<p>Delivery Charge for any city in Indonesia depends according to the city. You will be able to review the delivery charge on the order preview page before completing your order.</p>
+								<h5>What is the charge for same day delivery?</h5>
+								<p>Delivery Charge for any city in Indonesia depends according to the city. You will be able to review the delivery charge on the order preview page before completing your order.</p>
+								
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearside"></div>
+		</div>
+	</div>
+	
+	<div class="clearfix"></div>	
+    
+<?php $this->load->view('front/footer.php'); ?>
